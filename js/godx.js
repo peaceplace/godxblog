@@ -4,7 +4,7 @@ var top_up = "<img id='upj' class='upj' style='max-width: 250%; transform: trans
 document.getElementById("go-up").innerHTML += top_up;
 
 // 气泡
-function qipao() {
+/*function qipao() {
     $('#page-header').circleMagic({
         radius: 10,
         density: .2,
@@ -49,7 +49,7 @@ function qipao() {
 }(jQuery);
 
 // 调用气泡方法
-qipao();
+qipao();*/
 // 可爱的Title
 var OriginTitle = document.title;
 var titleTime;
