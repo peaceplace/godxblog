@@ -1,5 +1,5 @@
 /*添加图片top*/
-var top_up = "<img id='upj' class='upj' style='max-width: 1000%; transform: translate(-70px,-70px);' src='https://cdn.jsdelivr.net/gh/lete114/CDN/Use/up.gif' title='回到顶部' >";
+var top_up = "<img id='upj' class='upj' style='max-width: 250%; transform: translate(-70px,-70px);' src='https://wx1.sbimg.cn/2020/08/08/osqsO.gif' title='回到顶部' >";
 /*添加到返回顶部按钮下*/
 document.getElementById("go-up").innerHTML += top_up;
 
@@ -50,3 +50,28 @@ document.getElementById("go-up").innerHTML += top_up;
 
 // 调用气泡方法
 qipao();*/
+// 可爱的Title
+var OriginTitle = document.title;
+var titleTime;
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        $('[rel="icon"]').attr('href', "/img/favicon.ico");
+        document.title = '啦啦啦啦点我呀~~~';
+        clearTimeout(titleTime);
+    } else {
+        $('[rel="icon"]').attr('href', "/img/favicon.ico");
+        document.title = '(*´∇｀*) 你坏坏！' + OriginTitle;
+        titleTime = setTimeout(function() {
+            document.title = OriginTitle;
+        }, 2000);
+    }
+});
+//页脚博主
+$(document).ready(function(e) {
+    $('.copyright').html('©2020 <i style="color:#FF6A6A;animation: announ_animation 0.8s linear infinite;" class="fa fa-heartbeat"></i> M-GX');
+});
+//去banner图
+var full_page = document.getElementsByClassName("full_page");
+if (full_page.length != 0) {
+  full_page[0].style.background = "transparent";
+}
