@@ -243,3 +243,10 @@ span:first-child {
     width: auto;
     min-width: 50%;
 }
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.5em;
+    fill: currentColor;
+    overflow: hidden;
+}
