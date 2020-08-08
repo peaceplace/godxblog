@@ -1,5 +1,5 @@
 /*添加图片top*/
-var top_up = "<img id='upj' class='upj' style='max-width: 250%; transform: translate(-70px,-70px);' src='https://wx1.sbimg.cn/2020/08/08/osqsO.gif' title='回到顶部' >";
+var top_up = "<img id='upj' class='upj' style='max-width: 250%; transform: translate(-70px,-70px);' src=' https://cdn.jsdelivr.net/gh/peaceplace/CDN@1.0/img/up.gif' title='回到顶部' >";
 /*添加到返回顶部按钮下*/
 document.getElementById("go-up").innerHTML += top_up;
 
