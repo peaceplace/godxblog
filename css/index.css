@@ -4432,6 +4432,9 @@ img {
 #vcomment .vbtn:hover {
   background: var(--btn-hover-color);
 }
+#vcomment textarea {
+  background: url("https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200809231048.gif") 100% 100% no-repeat;
+}
 #vcomment .vimg {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
