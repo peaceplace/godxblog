@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>基于jsDelivr+Github搭建个人图床</title>
+      <link href="/57166.html"/>
+      <url>/57166.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div class="note info">            <p>在建博客初期我还用着公益图床这个东西，然后看见其他搭博客的大佬们一个个都用着jsdelivr然后·····就有了下面的教程</p>          </div><blockquote><p>首先特别感谢<a href="https://dabailuobo.com">萝卜大佬</a>的图床教程！！！萝卜大佬超牛p！！！！</p></blockquote><h2 id="首先第一步需要在电脑上下载PicGo这个图片上传软件"><a href="#首先第一步需要在电脑上下载PicGo这个图片上传软件" class="headerlink" title="首先第一步需要在电脑上下载PicGo这个图片上传软件~"></a>首先第一步需要在电脑上下载PicGo这个图片上传软件~</h2><ul><li>地址如下：<blockquote><p><a href="https://github.com/Molunerfinn/PicGo">https://github.com/Molunerfinn/PicGo</a></p></blockquote><h2 id="第二步在自己的github上创建CDN仓库"><a href="#第二步在自己的github上创建CDN仓库" class="headerlink" title="第二步在自己的github上创建CDN仓库"></a>第二步在自己的github上创建CDN仓库</h2><div class="note info">            <p>啊这就不展示了</p>          </div><h2 id="第三步在github上申请个人Token"><a href="#第三步在github上申请个人Token" class="headerlink" title="第三步在github上申请个人Token"></a>第三步在github上申请个人Token</h2></li><li>如图所示：  </li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200814152533.png" alt="进设置">  </p><ul><li>进入设置  </li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200814152700.png" alt="找到Developer setting">  </p><ul><li>找到Developer setting<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200814152917.png" alt="点开personal access tokens">  </li><li>点看Developer setting后点开personal access tokens<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200814153048.png" alt="选择generate new token"></li><li>在personal access tokens中选择generate new token随后复制生成好的token即可  </li></ul><h2 id="第三步将自己的仓库名和token等内容填进PicGo的Github图床设置里"><a href="#第三步将自己的仓库名和token等内容填进PicGo的Github图床设置里" class="headerlink" title="第三步将自己的仓库名和token等内容填进PicGo的Github图床设置里"></a>第三步将自己的仓库名和token等内容填进PicGo的Github图床设置里</h2><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200814153247.png" alt="图床设置"></p><div class="note success">            <p>填写完成后就可以上传图片咯</p>          </div><h2 id="图床使用方法"><a href="#图床使用方法" class="headerlink" title="图床使用方法"></a>图床使用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;[用户名]&#x2F;[仓库名]</span><br></pre></td></tr></table></figure><div class="note success">            <p>大功告成<del>又水了一篇文章哈哈哈哈</del></p>          </div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> 图床 </tag>
+            
+            <tag> picgo </tag>
+            
+            <tag> jsdelivr </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git使用技巧——发布Clone仓库</title>
       <link href="/36680.html"/>
       <url>/36680.html</url>
