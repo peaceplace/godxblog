@@ -113,8 +113,8 @@ if (autoChangeMode === '1') {
   function initValine () {
     window.valine = new Valine({
       el: '#vcomment',
-      appId: 'y2Tby2UVcJ55gnqK6mOUkWEa-gzGzoHsz',
-      appKey: 'Wh4oNclT3otmAQ4Vv8KIgHN9',
+      appId: 'UXPveg4C2UWvzd5Jy8busORs-MdYXbMMI',
+      appKey: 'VFh2eSq883yXLq3MlvwVWNFY',
       placeholder: '😛客官~昵称可以使用QQ号来自动补全邮箱和头像等信息呢',
       avatar: 'monsterid',
       meta: 'nick,mail,link'.split(','),
@@ -125,13 +125,14 @@ if (autoChangeMode === '1') {
       emojiCDN: '',
       emojiMaps: "",
       enableQQ: true,
+      master:'f934bb2298b268a59bf72c7f52344105',
       path: window.location.pathname,
     });
     if ('nick,mail') { valine.config.requiredFields= 'nick,mail'.split(',') }
   }
 
   if (typeof Valine === 'function') initValine() 
-  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+  else $.getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js', initValine)
 }
 
 if ('Valine' === 'Valine' || !false) {
