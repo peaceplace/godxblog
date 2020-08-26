@@ -21,21 +21,21 @@
         font-size: 13px;
     }
 }
-/* 鼠标图标 */
+/* 鼠标图标 
 
 body {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/Jkll8I.png), auto;
 }
 
 
-/*a标签*/
+/*a标签
 
 a:hover {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/*按钮*/
+/*按钮
 
 button:hover {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
@@ -54,21 +54,21 @@ button:hover {
 }
 
 
-/* 打赏 */
+/* 打赏 
 
 .post-reward .reward-button {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/* 文章标签 */
+/* 文章标签 
 
 .layout_post .tag_share .post-meta__tags {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/* 评论区 */
+/* 评论区 
 
 .vcol * {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
@@ -83,28 +83,27 @@ button:hover {
 }
 
 
-/* 回复 */
+/* 回复 
 
 .vat {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/*i标签*/
+/*i标签
 
 i:hover {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/*up酱*/
-
+/*up酱
 #upj:hover {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
 
 
-/*页脚a标签*/
+/*页脚a标签
 
 #footer-wrap a:hover {
     text-decoration: none;
@@ -112,15 +111,16 @@ i:hover {
 }
 
 
-/*分页器*/
+/*分页器
 
 #pagination .page-number:hover {
     cursor: url(https://cdn.jsdelivr.net/gh/lete114/CDN@1.0/Use/JkuClT.png), auto;
 }
-/* 分页器的三个点(...) */
+/* 分页器的三个点(...) 
 .space {
     color: #00c4b6;
 }
+*/
 /* 页脚footer */
 /* 渐变色滚动动画 
 @-webkit-keyframes Gradient {
@@ -181,7 +181,7 @@ i:hover {
 #footer:before {
     background-color: rgba(0, 0, 0, 0);
 }*/
-/* 滚动条 */
+/* 滚动条 
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -214,9 +214,9 @@ i:hover {
   ::-moz-selection {
     color: #fff;
     background-color: #49b1f5;
-  }
-  /*卡片折叠*/
-  #aside_content
+  }*/
+  /*卡片折叠
+#aside_content
 .card-archives
 ul.card-archive-list
 > .card-archive-list-item
@@ -231,5 +231,5 @@ span:first-child {
     width: auto;
     min-width: 50%;
 }
-
+*/
 
