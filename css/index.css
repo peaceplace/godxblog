@@ -3734,7 +3734,7 @@ _:future,
 #article-container h6:before {
   position: absolute;
   top: calc(50% - 0.35rem);
-  color: #f47466;
+  color: #c84f42;
   content: '\f0c1';
   line-height: 1;
   -webkit-transition: all 0.2s ease-out;
