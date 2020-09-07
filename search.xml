@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>PPP点对点协议配置方法</title>
+      <link href="/39124.html"/>
+      <url>/39124.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="PPP点对点协议简介"><a href="#PPP点对点协议简介" class="headerlink" title="PPP点对点协议简介"></a>PPP点对点协议简介</h1><p>PPP (<em>Point to Point Protocal</em>) 点对点协议为在点对点连接上传输多协议数据包提供了一个标准方式，<code>PPP</code>最初设计是为了两个对等节点之间的IP流量传输提供一种封装协议。在<code>TCP/IP协议集</code>中他是一种用来同步调制连接的一种封装协议，数据链路层协议（OSI模型中的第二层）替代了原来非标准的第二层协议，即<code>SLIP</code>  </p><p><img src= "/img/loading.gif" data-lazy-src="https://s1.ax1x.com/2020/09/07/wnO4i9.png"></p><h1 id="应用环境"><a href="#应用环境" class="headerlink" title="应用环境"></a>应用环境</h1><p>要接入第三方网络——电信、网通等时候用</p><blockquote><p>基于安全考虑，双方要经过验证才能连接  </p></blockquote><h1 id="配置命令（基于DCN的路由交换机）"><a href="#配置命令（基于DCN的路由交换机）" class="headerlink" title="配置命令（基于DCN的路由交换机）"></a>配置命令（基于DCN的路由交换机）</h1><h2 id="RouterA配置"><a href="#RouterA配置" class="headerlink" title="RouterA配置"></a>RouterA配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Router&gt; enable</span><br><span class="line">Router# config</span><br><span class="line">Router_config# hostname RouterA</span><br><span class="line">RouterA_config# username RouterB password 1234  &#x2F;&#x2F;设置账号密码</span><br><span class="line">RouterA_config# int s0&#x2F;1</span><br><span class="line">RouterA_config_s0&#x2F;1# ip address 192.168.1.1 255.255.255.0</span><br><span class="line">RouterA_config_s0&#x2F;1# encapsulation ppp  &#x2F;&#x2F;封装PPP协议</span><br><span class="line">RouterA_config_s0&#x2F;1# ppp chap hostname RouterA  &#x2F;&#x2F;设置发给对方验证的账号</span><br><span class="line">RouterA_config_s0&#x2F;1# physical-layer speed 64000  &#x2F;&#x2F;设置DCE时钟频率</span><br><span class="line">RouterA_config_s0&#x2F;1# no shutdown</span><br><span class="line">RouterA_config_s0&#x2F;1# exit</span><br><span class="line">RouterA_config# aaa authentication ppp default local  &#x2F;&#x2F;配置aaa的PPP认证方法表</span><br></pre></td></tr></table></figure><h2 id="RouterB配置"><a href="#RouterB配置" class="headerlink" title="RouterB配置"></a>RouterB配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Router&gt; enable</span><br><span class="line">Router# config</span><br><span class="line">Router_config# hostname RouterB</span><br><span class="line">RouterB_config# username RouterA password 1234  &#x2F;&#x2F;设置账号密码</span><br><span class="line">RouterB_config# int s0&#x2F;1</span><br><span class="line">RouterB_config_s0&#x2F;1# ip address 192.168.1.1 255.255.255.0</span><br><span class="line">RouterB_config_s0&#x2F;1# encapsulation ppp  &#x2F;&#x2F;封装PPP协议</span><br><span class="line">RouterB_config_s0&#x2F;1# ppp authentication chap  &#x2F;&#x2F;设置验证方式</span><br><span class="line">RouterB_config_s0&#x2F;1# ppp chap hostname RouterB  &#x2F;&#x2F;设置发给对方验证的账号</span><br><span class="line">RouterB_config_s0&#x2F;1# no shutdown</span><br><span class="line">RouterB_config_s0&#x2F;1# exit</span><br><span class="line">RouterB_config# aaa authentication ppp default local  &#x2F;&#x2F;配置aaa的PPP认证方法表</span><br></pre></td></tr></table></figure><div class="note success"><p>总结完毕，又成功的水了一篇文章哈哈哈</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 路由交换技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由交换技术 </tag>
+            
+            <tag> DCN </tag>
+            
+            <tag> 神州数码 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言读书总结Part1</title>
       <link href="/23316.html"/>
       <url>/23316.html</url>
