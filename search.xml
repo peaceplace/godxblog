@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>数据和C</title>
+      <link href="/28863.html"/>
+      <url>/28863.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>本文为 <em>《C Primer Plus 第五版》</em> 读书总结</p></blockquote><h1 id="第三章总结"><a href="#第三章总结" class="headerlink" title="第三章总结"></a>第三章总结</h1><p>先上示例程序  </p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*rhodium.c --用金属铑衡量你的体重*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">float</span> weight;</span><br><span class="line">        <span class="keyword">float</span> value;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;想知道你的体重值多少钱的金属铑嘛？\n&quot;</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;让我们来算算吧！\n&quot;</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;请键入你的体重:&quot;</span>);</span><br><span class="line">        <span class="comment">/* 从用户处获取输入 */</span></span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>, &amp;weight);</span><br><span class="line">        <span class="comment">//假设金属铑每盎司770美元</span></span><br><span class="line">        <span class="comment">//14.5883把常衡制的英镑转换为金衡制的盎司</span></span><br><span class="line">        value = <span class="number">770</span> * weight * <span class="number">14.5883</span>;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;你的体重值%.2f的金属铑喔！\n&quot;</span>,value);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>此程序包含的新元素  </li></ul><ol><li><code>%.2f</code> 精确控制输出到小数点后两位</li><li><code>int</code>整型变量</li><li><code>float</code>浮点变量 （即可使用带小数点的数）</li><li><code>scanf()</code>函数 可为程序提供键盘输入</li><li><code>%f</code> 指示<code>scanf()</code>从键盘上读取一个浮点数</li><li><code>&amp;weight</code>将输入值赋予命为weight的变量中</li></ol><h2 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h2><ol><li>程序需要使用数据，即承载信息的数字或字符</li><li>数据在整个程序中预先设置好且运行时无变化为常量</li><li>数据在程序运行时可能变化或被赋值的量为变量</li></ol><h2 id="数据类型关键字"><a href="#数据类型关键字" class="headerlink" title="数据类型关键字"></a>数据类型关键字</h2><p>如果是常量——直接书写<br>如果是变量——声明类型  </p><center><strong>C语言的数据关键字</strong></center>  <table><thead><tr><th align="center">原来的K&amp;R关键字</th><th align="center">C90关键字</th><th align="center">C99关键字</th></tr></thead><tbody><tr><td align="center">int</td><td align="center">signed</td><td align="center">_Bool</td></tr><tr><td align="center">long</td><td align="center">void</td><td align="center">_Complex</td></tr><tr><td align="center">short</td><td align="center"></td><td align="center">_Imaginary</td></tr><tr><td align="center">unsigned</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">char</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">float</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">double</td><td align="center"></td><td align="center"></td></tr></tbody></table><blockquote><p>解释：</p><blockquote><p><code>int</code>关键字提供C的基本整数类型<br><code>long</code> <code>short</code> <code>unsigned</code> <code>signed</code> 这些为变种<br><code>char</code> 用于表示字母以及其他字符，也可表示小的整数<br><code>float</code> <code>double</code>和组合 <code>long double</code>表示带有小数点的数<br><code>_Bool</code> 表示布尔值 （true or false）<br><code>_Complex</code>和<code>_Imaginary</code>分别表示复数和虚数</p></blockquote></blockquote><div class="note warning"><p>以上类型按计算机存储方式划分为：<br>整数（<em>integer</em>）类型<br>浮点数（<em>floating-Point</em>）类型</p></div><h3 id="位、字节和字"><a href="#位、字节和字" class="headerlink" title="位、字节和字"></a>位、字节和字</h3><ul><li>最小的存储单位：位 （bit）</li><li>常用计算机存储单位： 字节（byte）</li><li>自然的存储单位： 字 （word）</li></ul><h2 id="整数类型-amp-浮点数类型"><a href="#整数类型-amp-浮点数类型" class="headerlink" title="整数类型&amp;浮点数类型"></a>整数类型&amp;浮点数类型</h2><p>区别：他们的存储方式不同</p><ol><li>整数 （没有小数部分的数）</li></ol><ul><li>以二进制位存储</li></ul><ol start="2"><li>浮点数 （包含了整数之间的那些数）<br>例：2.75 3.16E7 7.00<blockquote><p>加了小数点的数是浮点型值  </p></blockquote></li></ol><ul><li>浮点数存储方式：将一个数分为小数部分和指数部分分别存储  </li></ul><h3 id="两种类型在应用中的区别"><a href="#两种类型在应用中的区别" class="headerlink" title="两种类型在应用中的区别"></a>两种类型在应用中的区别</h3><ol><li>整数没小数部分，浮点数有</li><li>浮点数可表示比整数范围大的多的数</li><li>对于一些算术运算，使用浮点数会损失更多精度</li><li>浮点数不能表示区域范围，只是实际值的近似</li><li>浮点运算通常比整数慢  </li></ol><div class="note info"><p>未完待续······</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> C </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 读书总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PPP点对点协议配置方法</title>
       <link href="/39124.html"/>
       <url>/39124.html</url>
