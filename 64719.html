@@ -4,7 +4,7 @@
   algolia: undefined,
   localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
-  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  noticeOutdate: {"limitDay":60,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
   highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
   copy: {
     success: '复制成功',
@@ -84,7 +84,7 @@ var activateLightMode = function () {
   }
 }
 
-var autoChangeMode = 'false'
+var autoChangeMode = '1'
 var t = saveToLocal.get('theme')
 if (autoChangeMode === '1') {
   var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
