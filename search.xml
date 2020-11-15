@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>字符串和格式化输入输出</title>
+      <link href="10685.html"/>
+      <url>10685.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="第四章总结"><a href="#第四章总结" class="headerlink" title="第四章总结"></a>第四章总结</h1><h2 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;  //提供strlen();函数原型</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DENSITY 62.4</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">float</span> weight , volume;</span><br><span class="line">        <span class="keyword">int</span> size, letters;</span><br><span class="line">        <span class="keyword">char</span> name[<span class="number">40</span>];      <span class="comment">//使用数组</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;你好！你姓什么？\n&quot;</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,name)  <span class="comment">//数组不使用&amp;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s,你体重是多少？\n&quot;</span>,name);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%f&quot;</span>,&amp;weight);</span><br><span class="line">        size = <span class="keyword">sizeof</span> name; <span class="comment">//sizeof函数对于具体量括号是可选的</span></span><br><span class="line">        letters = <span class="built_in">strlen</span>(name);</span><br><span class="line">        volume = weight/DENSITY;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;好的,%s,你的人体密度为%2.2f \n&quot;</span>,name,volume);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;然后，你的姓有%d个字母\n&quot;</span>,letters);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;你的名字占用 %d bytes的存储空间\n&quot;</span>,size);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h2 id="解释程序"><a href="#解释程序" class="headerlink" title="解释程序"></a>解释程序</h2><ol><li>&lt;string.h&gt; 提供 strlen() 函数</li><li>define XXX volune C预处理器定义常量</li><li>%s 字符串型格式符 处理字符串的输入和输出</li><li>weight 使用 &amp; 而name未使用</li><li>strlen() 获取字符串长度</li></ol><h2 id="字符串概述"><a href="#字符串概述" class="headerlink" title="字符串概述"></a>字符串概述</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul><li>一个或多个字符的序列</li><li>C没有为字符串定义专门的变量类型</li><li>字符串存储在 char 数组中</li><li>字符串存储空间要比存储的字符串的字符数多1</li></ul><h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201115142045.png" alt="字符串存储空间要比存储的字符串的字符数多1"></p><h3 id="scanf-函数特性"><a href="#scanf-函数特性" class="headerlink" title="scanf()函数特性"></a><code>scanf()</code>函数特性</h3><p>当遇到一个空白字符空格（blank），制表符（tab）或换行符（newline）处停止读取，若停止读取的字符串后还有字符串，则在下一次使用scanf()函数时接着读取</p><p>一般情况下，使用%s的scanf()只会吧一个单词作为字符串读入</p><h2 id="字符和字符串"><a href="#字符和字符串" class="headerlink" title="字符和字符串"></a>字符和字符串</h2><div class="note success modern"><p>未完待续<del>~</del></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> C </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C </tag>
+            
+            <tag> 读书总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C语言环境配置基于MinGW</title>
       <link href="20344.html"/>
       <url>20344.html</url>
