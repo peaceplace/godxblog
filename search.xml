@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>RHEL 8.0 重置root密码</title>
+      <link href="39097.html"/>
+      <url>39097.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前导"><a href="#前导" class="headerlink" title="前导"></a>前导</h2><p>如果你忘记了RHEL 8系统中的root密码，那就得重置root密码，以下为在Grub启动菜单中在RHEL 8上进行手动密码恢复</p><h2 id="引导-重启RHEL-8系统"><a href="#引导-重启RHEL-8系统" class="headerlink" title="引导/重启RHEL 8系统"></a>引导/重启RHEL 8系统</h2><ul><li>将系统重启，在看到grub菜单后，按键盘上<code>e</code>键中断启动过程：</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201120215129.png" alt="在此界面按`e`键"></p><ul><li>按完后，将显示linux内核启动参数，此时我们需要修改里面的内容，以便重置RHEL8.0上重置root密码<br>参数如下：</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201120214632.png"></p><ul><li>接着删除 <code>ro crash\</code> 这些内容然后添加<code>rd.break enforcing=0</code></li><li>或者在第六行最后面的<code>quiet</code>后添加如下参数：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console&#x3D;tty0 rd.break</span><br></pre></td></tr></table></figure><p>输入完成后 <code>Ctrl+x</code>保存退出</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201120214630.png"></p><ul><li>退出后将进入单用户模式，此时必须使用<code>rw</code>标志重新安装系统的根目录，因为它处于只读模式</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">switch_root:&#x2F;#  mount -o remount,rw &#x2F;sysroot</span><br><span class="line">switch_root:&#x2F;# chroot &#x2F;sysroot  &#x2F;&#x2F;切换到&#x2F;sysroot目录重置root密码</span><br><span class="line">sh-4.4# passwd      &#x2F;&#x2F;使用passwd命令在RHEL8上重置root密码</span><br></pre></td></tr></table></figure><p>或者使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">switch_root:&#x2F;#  mount -o remount,rw &#x2F;sysroot</span><br><span class="line">switch_root:&#x2F;# chroot &#x2F;sysroot  &#x2F;&#x2F;切换到&#x2F;sysroot目录重置root密码</span><br><span class="line">sh-4.4# echo &quot;这个地方填入你更改之后的密码&quot; | passwd --stdin root</span><br></pre></td></tr></table></figure><ul><li>此时输入所需密码并在出现提示时确认，设置密码后，在重新启动时启用SELinux重新标记并退出控制</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch &#x2F;.autorelabel   &#x2F;&#x2F;此句很重要，selinux会重新对系统文件进行重新标记</span><br><span class="line">exit</span><br><span class="line">exit</span><br></pre></td></tr></table></figure><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201120214634.png"></p><ul><li>退出后等待系统启动即可</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201120214633.png"></p><div class="note success modern"><p>总结完毕<del>~</del></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> redhat </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> root </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>字符串和格式化输入输出</title>
       <link href="10685.html"/>
       <url>10685.html</url>
