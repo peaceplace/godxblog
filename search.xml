@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>RHEL 8.0 配置IP地址以及重启网络方式</title>
+      <link href="62443.html"/>
+      <url>62443.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前导"><a href="#前导" class="headerlink" title="前导"></a>前导</h2><p>本文主要讲解如何重启RHEL 8或者CentOS 8网络以及如何解决RHEL8和CentOS8系统的网络管理服务报错，当我们安装好RHEL 8或者 CentOS 8，重启启动网络时，会出现以下报错：</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201121115514.png"></p><p>报错信息如下<br><code>Failed to restart network.service: Unit network.service not found.</code><br>意思为无法重启网络服务，原因是无法找到network.service网络服务</p><p>出现错误的原因是，在RHEL 8和CentOS 8系统里，已废弃network.service，因此只能通过其它方法进行网络配置，包括NM命令工具集。换言之，在rhel8上，必须开启NM，否则无法使用网络</p><p>此时必须找到你的网卡标识，可用如下命令确定网卡标识符</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root#localhost ~]# ip addr</span><br></pre></td></tr></table></figure><p>比如我的虚拟机网卡标识符就是<code>ens160</code></p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201121120349.png"></p><h2 id="RHEL8或者CentOS8利用手工配置ifcfg使用nmcli来生效新的网络配置"><a href="#RHEL8或者CentOS8利用手工配置ifcfg使用nmcli来生效新的网络配置" class="headerlink" title="RHEL8或者CentOS8利用手工配置ifcfg使用nmcli来生效新的网络配置"></a>RHEL8或者CentOS8利用手工配置<code>ifcfg</code>使用<code>nmcli</code>来生效新的网络配置</h2><ul><li>假设网卡标识符为xxx</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root#localhost ~]# vi etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-xxx</span><br></pre></td></tr></table></figure><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201121120924.png"></p><p>此文件里ONBOOT记得一定要开启也就是yes</p><ul><li>保存后使用<code>nmcli</code>重新回载网络配置</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root#localhost ~]# nmcli c reload</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root#localhost ~]# nmcli c up xxx</span><br></pre></td></tr></table></figure><ul><li>最后使用<code>ifconfig</code>查看是否成功修改</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root#localhost ~]# ifconfig</span><br></pre></td></tr></table></figure><ul><li>整体流程如下：</li></ul><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201121121225.png"></p><div class="note success modern"><p>总结完毕<del>~</del></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redhat </tag>
+            
+            <tag> linux </tag>
+            
+            <tag> 教程 </tag>
+            
+            <tag> root </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RHEL 8.0 重置root密码</title>
       <link href="39097.html"/>
       <url>39097.html</url>
@@ -20,9 +51,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> redhat </tag>
+            
+            <tag> linux </tag>
             
             <tag> 教程 </tag>
             
@@ -171,11 +202,11 @@
       
         <tags>
             
+            <tag> linux </tag>
+            
             <tag> 技巧 </tag>
             
             <tag> kali linux </tag>
-            
-            <tag> linux </tag>
             
         </tags>
       
