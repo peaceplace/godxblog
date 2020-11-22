@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RHEL 8.0 磁盘分区管理 | God-X 学习日记</title><meta name="keywords" content="RHEL 8.0"><meta name="author" content="M-GX"><meta name="copyright" content="M-GX"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前言RHEL8和Centos8他们的分区管理和上代一样，此处将展示一到2019红帽挑战赛复赛试题来演示系统的分区以及其他管理操作  开始 首先需要给虚拟机增添一块20G的SATA硬盘具体步骤如下：       后面接着下一步即可  添加完成后开始分区   查看硬盘是否已上线  1[root@desktop ~]# lsblk    查看硬盘是哪种分区表格式  1[root@desktop ~]#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHEL 8.0 磁盘分区管理">
+<meta property="og:url" content="https://peacecity.cn/24692.html">
+<meta property="og:site_name" content="God-X 学习日记">
+<meta property="og:description" content="前言RHEL8和Centos8他们的分区管理和上代一样，此处将展示一到2019红帽挑战赛复赛试题来演示系统的分区以及其他管理操作  开始 首先需要给虚拟机增添一块20G的SATA硬盘具体步骤如下：       后面接着下一步即可  添加完成后开始分区   查看硬盘是否已上线  1[root@desktop ~]# lsblk    查看硬盘是哪种分区表格式  1[root@desktop ~]#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.peacecity.cn/img/20201122135723.png">
+<meta property="article:published_time" content="2020-11-22T05:47:05.014Z">
+<meta property="article:modified_time" content="2020-11-22T05:47:05.014Z">
+<meta property="article:author" content="M-GX">
+<meta property="article:tag" content="redhat">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="磁盘分区">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.peacecity.cn/img/20201122135723.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200810210800.png"><link rel="canonical" href="https://peacecity.cn/24692"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="code-TLXAo3ltlm"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":60,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: {"text":"富强,民主,文明,和谐,自由,平等,公正,法制,爱国,敬业,诚信,友善","fontSize":"15px"},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#d89211","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-11-22 13:47:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/font-awesome-animation.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/iconfont.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1994881_tzxky9rndo8.css"><style type="text/css">#toggle-sidebar {bottom: 80px}</style><meta name="generator" content="Hexo 5.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200810210800.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont iconshouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont iconwenzhang-copy"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-boxes"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-link"></i><span> 链接库</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://webstack.mgxnb.club"><i class="fa-fw far fa-save"></i><span> 网站收藏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-music"></i><span> 听歌嘛?</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.mgxnb.club"><i class="fa-fw fas fa-music"></i><span> MUSIC</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw iconfont iconvynil"></i><span> 网抑云</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-cloud-upload-alt"></i><span> 镜像站</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://vercel.mgxnb.club"><i class="fa-fw iconfont iconsanjiaotop"></i><span> Vercel</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="http://n51dun.coding-pages.com/"><i class="fa-fw iconfont iconCN_codingnet"></i><span> Coding</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://peaceplacehj.gitee.io/"><i class="fa-fw iconfont icongitee-fill-round"></i><span> Gitee</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://peaceplacehj.gitee.io/pony_blog/"><i class="fa-fw iconfont icongitee-fill-round"></i><span> pony's Blog</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-user-graduate"></i><span> 关于本站</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw iconfont iconwo"></i><span> 关于站长</span></a></li><li><a class="site-page" href="/timeline/"><i class="fa-fw iconfont icontime"></i><span> 时间线</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能页</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://status.mgxnb.club"><i class="fa-fw iconfont iconwebcamera"></i><span> 网站监控</span></a></li><li><a class="site-page" href="/artitalk/"><i class="fa-fw iconfont icontalk"></i><span> 谈天说地</span></a></li></ul></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.peacecity.cn/img/20201122135723.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">God-X 学习日记</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont iconshouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw iconfont iconwenzhang-copy"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fas fa-bookmark"></i><span> 标签</span></a></li><li><a class="site-page" href="/categories/"><i class="fa-fw fas fa-boxes"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-link"></i><span> 链接库</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://webstack.mgxnb.club"><i class="fa-fw far fa-save"></i><span> 网站收藏</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-music"></i><span> 听歌嘛?</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://music.mgxnb.club"><i class="fa-fw fas fa-music"></i><span> MUSIC</span></a></li><li><a class="site-page" href="/music/"><i class="fa-fw iconfont iconvynil"></i><span> 网抑云</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-cloud-upload-alt"></i><span> 镜像站</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://vercel.mgxnb.club"><i class="fa-fw iconfont iconsanjiaotop"></i><span> Vercel</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="http://n51dun.coding-pages.com/"><i class="fa-fw iconfont iconCN_codingnet"></i><span> Coding</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://peaceplacehj.gitee.io/"><i class="fa-fw iconfont icongitee-fill-round"></i><span> Gitee</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://peaceplacehj.gitee.io/pony_blog/"><i class="fa-fw iconfont icongitee-fill-round"></i><span> pony's Blog</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-user-graduate"></i><span> 关于本站</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/about/"><i class="fa-fw iconfont iconwo"></i><span> 关于站长</span></a></li><li><a class="site-page" href="/timeline/"><i class="fa-fw iconfont icontime"></i><span> 时间线</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 功能页</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page" target="_blank" rel="noopener" href="https://status.mgxnb.club"><i class="fa-fw iconfont iconwebcamera"></i><span> 网站监控</span></a></li><li><a class="site-page" href="/artitalk/"><i class="fa-fw iconfont icontalk"></i><span> 谈天说地</span></a></li></ul></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">RHEL 8.0 磁盘分区管理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-22T05:47:05.014Z" title="发表于 2020-11-22 13:47:05">2020-11-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T05:47:05.014Z" title="更新于 2020-11-22 13:47:05">2020-11-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">343</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>RHEL8和Centos8他们的分区管理和上代一样，此处将展示一到2019红帽挑战赛复赛试题来演示系统的分区以及其他管理操作</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122134827.jpg" alt="试题"></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ul>
+<li>首先需要给虚拟机增添一块20G的SATA硬盘具体步骤如下：</li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140207.png" alt="在虚拟机设置里点击添加"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140237.png" alt="选择硬盘"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140357.png" alt="选择SATA"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140420.png" alt="选择创建新的虚拟硬盘"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140504.png" alt="数值设置为20G"></p>
+<p>后面接着下一步即可</p>
+<ul>
+<li>添加完成后开始分区</li>
+</ul>
+<ol>
+<li>查看硬盘是否已上线</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# lsblk</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140759.png"></p>
+<ol start="2">
+<li>查看硬盘是哪种分区表格式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# parted 磁盘名（例如&#x2F;dev&#x2F;sda） print</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122140733.png" alt="查看Partition Table"></p>
+<blockquote>
+<p>如果是MBR分区请使用fdisk分区，GPT分区则使用gdisk分区。一定不能搞错，否则会导致分区失败</p>
+</blockquote>
+<ol start="3">
+<li>使用fdisk新增分区 （gdisk使用方法类似）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# fdisk &#x2F;dev&#x2F;sda</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122141753.png" alt="根据提示输入命令即可"></p>
+<ol start="4">
+<li>分区完成后检查是否分区成功</li>
+</ol>
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122141951.png"></p>
+<ol start="5">
+<li>磁盘格式化（创建文件系统）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# mkfs.ext4 或者 xfs 根据具体要求更改</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122142500.png"></p>
+<ol start="6">
+<li>检查格式化是否正确</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# blkid &#x2F;dev&#x2F;sda1</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122142755.png"></p>
+<ol start="7">
+<li>创建挂载目录且设置自动开机挂载</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@desktop ~]# mkdir &#x2F;cehuabu</span><br><span class="line">[root@desktop ~]# echo &quot;&#x2F;dev&#x2F;sda1 &#x2F;cehuabu ext4 defaults 0 0&quot; &gt;&gt; &#x2F;etc&#x2F;fstab</span><br><span class="line">[root@desktop ~]# more &#x2F;etc&#x2F;fstab</span><br><span class="line">[root@desktop ~]# mount -a &#x2F;&#x2F;mount -a 自动挂载&#x2F;etc&#x2F;fstab文件没有挂载的设备，不管已挂载过的设备</span><br><span class="line">[root@desktop ~]# df -h &#x2F;&#x2F;查看是否挂载上</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201122143112.png"></p>
+<div class="note success modern"><p>总结完毕<del>~</del></p>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">M-GX</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://peacecity.cn/24692.html">https://peacecity.cn/24692.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://peacecity.cn" target="_blank">God-X 学习日记</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/redhat/">redhat</a><a class="post-meta__tags" href="/tags/linux/">linux</a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/">磁盘分区</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.peacecity.cn/img/20201122135723.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200812162742.png" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200812162742.png" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200812162822.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200812162822.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/58531.html"><img class="next-cover" data-lazy-src="https://cdn.peacecity.cn/img/20201121222419.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RHEL 8.0 配置YUM本地源</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/62443.html" title="RHEL 8.0 配置IP地址以及重启网络方式"><img class="cover" data-lazy-src="https://cdn.peacecity.cn/img/20201121115857.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-21</div><div class="title">RHEL 8.0 配置IP地址以及重启网络方式</div></div></a></div><div><a href="/58531.html" title="RHEL 8.0 配置YUM本地源"><img class="cover" data-lazy-src="https://cdn.peacecity.cn/img/20201121222419.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-21</div><div class="title">RHEL 8.0 配置YUM本地源</div></div></a></div><div><a href="/39097.html" title="RHEL 8.0 重置root密码"><img class="cover" data-lazy-src="https://cdn.peacecity.cn/img/20201121120002.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-20</div><div class="title">RHEL 8.0 重置root密码</div></div></a></div><div><a href="/64719.html" title="kali linux安装后调试"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200815222302.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-09-18</div><div class="title">kali linux安装后调试</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqusjs</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200810210800.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">M-GX</div><div class="author-info__description">在头秃的路上越走越远~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/peaceplace"><i class="fab fa-github"></i><span>一起Gayhub？</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/peaceplace" target="_blank" title="Github"><i class="iconfont icongithub"></i></a><a class="social-icon" href="mailto:zaynmalik0515@gmail.com" target="_blank" title="Email"><i class="iconfont icon-youxiang"></i></a><a class="social-icon" href="https://space.bilibili.com/39619494" target="_blank" title="BiliBili"><i class="iconfont icon-bilibili1"></i></a><a class="social-icon" href="https://www.zhihu.com/people/1000x-27" target="_blank" title="zhihu"><i class="iconfont icon-zhihu"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_34349020" target="_blank" title="csdn"><i class="iconfont icon-csdn1"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><iframe scrolling="no" src="https://tianqiapi.com/api.php?style=yd&skin=sogou&color=ffffff" frameborder="0" width="100%" height="30" allowtransparency="true" ></iframe><br/>没有公告！啦啦啦啦 <img src="https://s1.ax1x.com/2020/09/05/wE27Wt.jpg" alt="啦啦啦" border="0" /><br/><a target="_blank" rel="noopener" href="https://hexo.io"><img alt="HEXO" title="由HEXO强力驱动" src="https://img.shields.io/badge/Powered-Hexo V5.2.0-007ec6" data-ll-status="loading" class="loading">&nbsp; </a><br/><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><img alt="THEME" title="本站点主题使用Butterfly" src="https://img.shields.io/badge/Theme-Butterfly V3.3.0-ffa500" data-ll-status="loading" class="loading"></a><br/><a target="_blank" rel="noopener" href="https://www.upyun.com/"><img alt="CDN" title="本站CDN提供商又拍云" src="https://img.shields.io/badge/CDN-%E5%8F%88%E6%8B%8D%E4%BA%91-blue" data-ll-status="loading" class="loading"></a><br/>🌏全球访客<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=53d0zpdf9yk&amp;m=2&amp;c=00ff6c&amp;cr1=ff8a00&amp;f=arial&amp;l=33" async="async"></script></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">开始</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/24692.html" title="RHEL 8.0 磁盘分区管理"><img data-lazy-src="https://cdn.peacecity.cn/img/20201122135723.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RHEL 8.0 磁盘分区管理"/></a><div class="content"><a class="title" href="/24692.html" title="RHEL 8.0 磁盘分区管理">RHEL 8.0 磁盘分区管理</a><time datetime="2020-11-22T05:47:05.014Z" title="发表于 2020-11-22 13:47:05">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/58531.html" title="RHEL 8.0 配置YUM本地源"><img data-lazy-src="https://cdn.peacecity.cn/img/20201121222419.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RHEL 8.0 配置YUM本地源"/></a><div class="content"><a class="title" href="/58531.html" title="RHEL 8.0 配置YUM本地源">RHEL 8.0 配置YUM本地源</a><time datetime="2020-11-21T12:12:21.366Z" title="发表于 2020-11-21 20:12:21">2020-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/62443.html" title="RHEL 8.0 配置IP地址以及重启网络方式"><img data-lazy-src="https://cdn.peacecity.cn/img/20201121115857.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RHEL 8.0 配置IP地址以及重启网络方式"/></a><div class="content"><a class="title" href="/62443.html" title="RHEL 8.0 配置IP地址以及重启网络方式">RHEL 8.0 配置IP地址以及重启网络方式</a><time datetime="2020-11-21T03:51:28.550Z" title="发表于 2020-11-21 11:51:28">2020-11-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/39097.html" title="RHEL 8.0 重置root密码"><img data-lazy-src="https://cdn.peacecity.cn/img/20201121120002.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RHEL 8.0 重置root密码"/></a><div class="content"><a class="title" href="/39097.html" title="RHEL 8.0 重置root密码">RHEL 8.0 重置root密码</a><time datetime="2020-11-20T13:39:38.000Z" title="发表于 2020-11-20 21:39:38">2020-11-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/10685.html" title="字符串和格式化输入输出"><img data-lazy-src="https://cdn.peacecity.cn/img/20201115135056.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="字符串和格式化输入输出"/></a><div class="content"><a class="title" href="/10685.html" title="字符串和格式化输入输出">字符串和格式化输入输出</a><time datetime="2020-11-15T05:49:45.000Z" title="发表于 2020-11-15 13:49:45">2020-11-15</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.peacecity.cn/img/20201122135723.png)"><div id="footer-wrap"><div class="copyright">&copy;2020 By M-GX</div><div class="footer_custom_text"><span>本网站由&nbsp;<a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://cdn.peacecity.cn/img/20200927175601.png" style="position:relative;top:-3px;" align="absmiddle" width="60px" height="30px" /> </a>提供CDN加速/云存储服务</span><br/><span style="font-size:1em;"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">陕ICP备2020013675号</a></span></div><div class="icp"><a target="_blank" rel="noopener" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61040202000518"><img class="icp-icon" src="https://cdn.peacecity.cn/img/20200927175721.png" alt="ICP"/><span>陕公网安备 61040202000518号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'UXPveg4C2UWvzd5Jy8busORs-MdYXbMMI',
+      appKey: 'VFh2eSq883yXLq3MlvwVWNFY',
+      placeholder: '😛客官~昵称可以使用QQ号来自动补全邮箱和头像等信息呢',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqusjs () {
+  function addDisqusjsCSS () {
+    const ele = document.createElement('link')
+    ele.rel = 'stylesheet'
+    ele.href= 'https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css'
+    document.getElementsByTagName('head')[0].appendChild(ele)
+  }
+
+  function initDisqusjs () {
+    window.DISQUS = null
+    new DisqusJS({
+      shortname: 'peacecity-cn',
+      siteName: 'peacecity.cn',
+      identifier: '24692.html',
+      url: 'https://peacecity.cn/24692.html',
+      title: 'RHEL 8.0 磁盘分区管理',
+      api: 'https://disqus.skk.moe/disqus/',
+      apikey: 'hBVGiRZAshBPVGS5IrF5M2rPkxISqeVVVmMHucWVHgIxS4o8fTl93oOsNvKOtJMb',
+      nocomment: '',
+      admin: '',
+      adminLabel: ''
+    });
+  }
+
+  window.disqusReset = initDisqusjs
+
+  if (window.disqusJsLoad) initDisqusjs()
+  else {
+    addDisqusjsCSS()
+    $.getScript('https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js', initDisqusjs)
+    window.disqusJsLoad = true
+  }
+}
+
+if ('Valine' === 'Disqusjs' || !false) {
+  if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqusjs)
+  else loadDisqusjs()
+}
+else {
+  function loadOtherComment () {
+    loadDisqusjs()
+  }
+}
+
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div class="aplayer no-destroy" data-id="5136405738" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" data-lrctype="0" muted></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
