@@ -214,50 +214,50 @@ if (asideStatus !== undefined) {
 <p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220113319.png" alt="此处为演示无法列出服务器列表"></p>
 <h3 id="第六题"><a href="#第六题" class="headerlink" title="第六题"></a>第六题</h3><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220113431.png" alt="第六题"></p>
 <p>第六题为配置web服务器，配置如下：</p>
-<ol>
+<ul>
 <li>首先需安装httpd</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# yum install -y httpd</span><br></pre></td></tr></table></figure>
 
 <p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220113842.png" alt="安装成功画面"></p>
-<ol start="2">
+<ul>
 <li>修改SElinux状态</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# setenforce 0</span><br><span class="line">[root@system2 ~]# getenforce </span><br><span class="line">Permissive</span><br><span class="line">[root@system2 ~]# </span><br></pre></td></tr></table></figure>
 
-<ol start="3">
+<ul>
 <li>防火墙开放http服务</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# firewall-cmd --permanent --add-service&#x3D;http</span><br><span class="line">success</span><br><span class="line">[root@system2 ~]# firewall-cmd --reload </span><br><span class="line">success</span><br><span class="line">[root@system2 ~]# firewall-cmd --list-all</span><br><span class="line">public (active)</span><br><span class="line">  target: default</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces: ens160</span><br><span class="line">  sources: </span><br><span class="line">  services: cockpit dhcpv6-client http ssh</span><br><span class="line">  ports: </span><br><span class="line">  protocols: </span><br><span class="line">  masquerade: no</span><br><span class="line">  forward-ports: </span><br><span class="line">  source-ports: </span><br><span class="line">  icmp-blocks: </span><br><span class="line">  rich rules: </span><br></pre></td></tr></table></figure>
 
 <p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220114339.png" alt="查看列表http则为成功"></p>
-<ol start="4">
+<ul>
 <li>添加Apache服务器配置文件</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# hostname</span><br><span class="line">system2.example.com</span><br><span class="line">[root@system2 ~]# vim &#x2F;etc&#x2F;httpd&#x2F;conf.d&#x2F;web.conf</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Virtualhost *:80&gt;</span><br><span class="line">        ServerName server0.example.com &#x2F;&#x2F;这里为你服务器的fqdn名（域名）</span><br><span class="line">        DocumentRoot &#x2F;var&#x2F;www&#x2F;html　 &#x2F;&#x2F;这里为存放网站的文件夹目录</span><br><span class="line">&lt;&#x2F;Virtualhost&gt;</span><br></pre></td></tr></table></figure>
 
 <p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220114848.png" alt="根据题目适当更改"></p>
-<ol start="5">
+<ul>
 <li>创建html文件</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# vim &#x2F;var&#x2F;www&#x2F;html&#x2F;index.html</span><br><span class="line">[root@system2 ~]# cat &#x2F;var&#x2F;www&#x2F;html&#x2F;index.html </span><br><span class="line">system2.example.com</span><br><span class="line">[root@system2 ~]# </span><br></pre></td></tr></table></figure>
 
 <p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20201220115236.png" alt="配置过程"></p>
-<ol start="6">
+<ul>
 <li>防火墙开启80端口</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# firewall-cmd --permanent --add-port&#x3D;80&#x2F;tcp</span><br><span class="line">success</span><br><span class="line">[root@system2 ~]# </span><br></pre></td></tr></table></figure>
 
-<ol start="7">
+<ul>
 <li>重启httpd服务并设置开启启动</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@system2 ~]# systemctl restart httpd</span><br><span class="line">[root@system2 ~]# </span><br><span class="line">[root@system2 ~]# systemctl enable httpd</span><br><span class="line">Created symlink &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;multi-user.target.wants&#x2F;httpd.service → &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;httpd.service.</span><br><span class="line">[root@system2 ~]# </span><br></pre></td></tr></table></figure>
 
-<ol start="8">
+<ul>
 <li>测试网站是否正常访问</li>
-</ol>
+</ul>
 <p>此处不做演示哈哈哈，根据题目要求能访问即可</p>
 <blockquote>
 <p>To be continued</p>
