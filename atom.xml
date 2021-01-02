@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>God-X 学习日记</title>
+  <icon>https://peacecity.cn/icon.png</icon>
+  <subtitle>与你一起走向秃头~淦</subtitle>
+  <link href="https://peacecity.cn/atom.xml" rel="self"/>
+  
+  <link href="https://peacecity.cn/"/>
+  <updated>2021-01-01T06:45:27.207Z</updated>
+  <id>https://peacecity.cn/</id>
+  
+  <author>
+    <name>M-GX</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2021新年快乐！！</title>
+    <link href="https://peacecity.cn/28218.html"/>
+    <id>https://peacecity.cn/28218.html</id>
+    <published>2021-01-01T06:45:27.207Z</published>
+    <updated>2021-01-01T06:45:27.207Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="杂谈" scheme="https://peacecity.cn/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="2021" scheme="https://peacecity.cn/tags/2021/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红帽挑战赛复赛试题分析</title>
+    <link href="https://peacecity.cn/52799.html"/>
+    <id>https://peacecity.cn/52799.html</id>
+    <published>2020-12-19T09:52:24.180Z</published>
+    <updated>2020-12-19T09:52:24.180Z</updated>
+    
+    
+    <summary type="html">红帽挑战赛复赛试题分析</summary>
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="试题" scheme="https://peacecity.cn/tags/%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VMware Workstation16密钥</title>
+    <link href="https://peacecity.cn/60420.html"/>
+    <id>https://peacecity.cn/60420.html</id>
+    <published>2020-12-08T07:39:33.177Z</published>
+    <updated>2020-12-08T07:39:33.177Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://peacecity.cn/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="密钥" scheme="https://peacecity.cn/tags/%E5%AF%86%E9%92%A5/"/>
+    
+    <category term="虚拟机" scheme="https://peacecity.cn/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RHEL 8.0 磁盘分区管理</title>
+    <link href="https://peacecity.cn/24692.html"/>
+    <id>https://peacecity.cn/24692.html</id>
+    <published>2020-11-22T05:47:05.014Z</published>
+    <updated>2020-11-22T05:47:05.014Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="磁盘分区" scheme="https://peacecity.cn/tags/%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RHEL 8.0 配置YUM本地源</title>
+    <link href="https://peacecity.cn/58531.html"/>
+    <id>https://peacecity.cn/58531.html</id>
+    <published>2020-11-21T12:12:21.366Z</published>
+    <updated>2020-11-21T12:12:21.366Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="本地源" scheme="https://peacecity.cn/tags/%E6%9C%AC%E5%9C%B0%E6%BA%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RHEL 8.0 配置IP地址以及重启网络方式</title>
+    <link href="https://peacecity.cn/62443.html"/>
+    <id>https://peacecity.cn/62443.html</id>
+    <published>2020-11-21T03:51:28.550Z</published>
+    <updated>2020-11-21T03:51:28.550Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="root" scheme="https://peacecity.cn/tags/root/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RHEL 8.0 重置root密码</title>
+    <link href="https://peacecity.cn/39097.html"/>
+    <id>https://peacecity.cn/39097.html</id>
+    <published>2020-11-20T13:39:38.000Z</published>
+    <updated>2020-11-20T13:39:38.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="root" scheme="https://peacecity.cn/tags/root/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串和格式化输入输出</title>
+    <link href="https://peacecity.cn/10685.html"/>
+    <id>https://peacecity.cn/10685.html</id>
+    <published>2020-11-15T05:49:45.000Z</published>
+    <updated>2020-11-15T05:49:45.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C" scheme="https://peacecity.cn/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://peacecity.cn/tags/C/"/>
+    
+    <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言环境配置基于MinGW</title>
+    <link href="https://peacecity.cn/20344.html"/>
+    <id>https://peacecity.cn/20344.html</id>
+    <published>2020-11-02T11:39:34.000Z</published>
+    <updated>2020-11-02T11:39:34.000Z</updated>
+    
+    
+    <summary type="html">C语言环境配置基于MinGW</summary>
+    
+    
+    
+    <category term="C" scheme="https://peacecity.cn/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://peacecity.cn/tags/C/"/>
+    
+    <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
+    
+    <category term="环境配置" scheme="https://peacecity.cn/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    <category term="MinGW" scheme="https://peacecity.cn/tags/MinGW/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>思科模拟器常用配置命令</title>
+    <link href="https://peacecity.cn/43804.html"/>
+    <id>https://peacecity.cn/43804.html</id>
+    <published>2020-10-10T12:10:47.553Z</published>
+    <updated>2020-10-10T12:10:47.553Z</updated>
+    
+    
+    <summary type="html">思科模拟器常用配置命令</summary>
+    
+    
+    
+    <category term="路由交换技术" scheme="https://peacecity.cn/categories/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="路由交换技术" scheme="https://peacecity.cn/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="思科模拟器" scheme="https://peacecity.cn/tags/%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
+    
+    <category term="命令" scheme="https://peacecity.cn/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Serverless实现B站打卡签到(Tencent云函数部署教程)</title>
+    <link href="https://peacecity.cn/1970.html"/>
+    <id>https://peacecity.cn/1970.html</id>
+    <published>2020-09-30T12:22:15.000Z</published>
+    <updated>2020-09-30T12:22:15.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="BiliBili" scheme="https://peacecity.cn/tags/BiliBili/"/>
+    
+    <category term="云函数" scheme="https://peacecity.cn/tags/%E4%BA%91%E5%87%BD%E6%95%B0/"/>
+    
+    <category term="腾讯" scheme="https://peacecity.cn/tags/%E8%85%BE%E8%AE%AF/"/>
+    
+    <category term="白嫖" scheme="https://peacecity.cn/tags/%E7%99%BD%E5%AB%96/"/>
+    
+    <category term="Serverless" scheme="https://peacecity.cn/tags/Serverless/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kali linux安装后调试</title>
+    <link href="https://peacecity.cn/64719.html"/>
+    <id>https://peacecity.cn/64719.html</id>
+    <published>2020-09-18T08:43:40.000Z</published>
+    <updated>2020-09-18T08:43:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+    <category term="kali linux" scheme="https://peacecity.cn/tags/kali-linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据和C</title>
+    <link href="https://peacecity.cn/28863.html"/>
+    <id>https://peacecity.cn/28863.html</id>
+    <published>2020-09-13T11:43:44.000Z</published>
+    <updated>2020-09-19T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">数据与C知识总结</summary>
+    
+    
+    
+    <category term="C" scheme="https://peacecity.cn/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://peacecity.cn/tags/C/"/>
+    
+    <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PPP点对点协议配置方法</title>
+    <link href="https://peacecity.cn/39124.html"/>
+    <id>https://peacecity.cn/39124.html</id>
+    <published>2020-09-07T06:02:28.000Z</published>
+    <updated>2020-09-07T06:02:28.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="路由交换技术" scheme="https://peacecity.cn/categories/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="路由交换技术" scheme="https://peacecity.cn/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="DCN" scheme="https://peacecity.cn/tags/DCN/"/>
+    
+    <category term="神州数码" scheme="https://peacecity.cn/tags/%E7%A5%9E%E5%B7%9E%E6%95%B0%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言概述</title>
+    <link href="https://peacecity.cn/23316.html"/>
+    <id>https://peacecity.cn/23316.html</id>
+    <published>2020-08-31T07:20:47.000Z</published>
+    <updated>2020-08-31T07:20:47.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="C" scheme="https://peacecity.cn/categories/C/"/>
+    
+    
+    <category term="C" scheme="https://peacecity.cn/tags/C/"/>
+    
+    <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客备份</title>
+    <link href="https://peacecity.cn/34169.html"/>
+    <id>https://peacecity.cn/34169.html</id>
+    <published>2020-08-24T06:15:47.000Z</published>
+    <updated>2020-08-24T06:15:47.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
+    
+    <category term="Hexo" scheme="https://peacecity.cn/tags/Hexo/"/>
+    
+    <category term="备份" scheme="https://peacecity.cn/tags/%E5%A4%87%E4%BB%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于jsDelivr+Github搭建个人图床</title>
+    <link href="https://peacecity.cn/57166.html"/>
+    <id>https://peacecity.cn/57166.html</id>
+    <published>2020-08-14T07:12:25.000Z</published>
+    <updated>2020-08-14T07:12:25.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
+    
+    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
+    
+    <category term="图床" scheme="https://peacecity.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+    <category term="picgo" scheme="https://peacecity.cn/tags/picgo/"/>
+    
+    <category term="jsdelivr" scheme="https://peacecity.cn/tags/jsdelivr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git使用技巧——发布Clone仓库</title>
+    <link href="https://peacecity.cn/36680.html"/>
+    <id>https://peacecity.cn/36680.html</id>
+    <published>2020-08-10T11:50:44.000Z</published>
+    <updated>2020-08-10T11:50:44.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
+    
+    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
+    
+    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android avd manager unable解决方案</title>
+    <link href="https://peacecity.cn/57831.html"/>
+    <id>https://peacecity.cn/57831.html</id>
+    <published>2020-08-08T08:53:40.000Z</published>
+    <updated>2020-08-08T08:53:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Android" scheme="https://peacecity.cn/tags/Android/"/>
+    
+    <category term="AVD" scheme="https://peacecity.cn/tags/AVD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里云+hexo搭建个人博客教程（基于centos7.8）</title>
+    <link href="https://peacecity.cn/35661.html"/>
+    <id>https://peacecity.cn/35661.html</id>
+    <published>2020-08-01T12:06:18.000Z</published>
+    <updated>2020-08-01T12:06:18.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="阿里云" scheme="https://peacecity.cn/tags/%E9%98%BF%E9%87%8C%E4%BA%91/"/>
+    
+    <category term="建站" scheme="https://peacecity.cn/tags/%E5%BB%BA%E7%AB%99/"/>
+    
+    <category term="hexo" scheme="https://peacecity.cn/tags/hexo/"/>
+    
+    <category term="centos7" scheme="https://peacecity.cn/tags/centos7/"/>
+    
+  </entry>
+  
+</feed>
