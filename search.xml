@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Debian10.X创建本地APT源</title>
+      <link href="4603.html"/>
+      <url>4603.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Debian 10.x总共有三个ISO镜像文件</p><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20210126203702.png" alt="三个镜像文件"></p><p>其中1是系统盘 2和3都是其他常用软件盘</p><h1 id="挂载步骤"><a href="#挂载步骤" class="headerlink" title="挂载步骤"></a>挂载步骤</h1><p>其实跟centos和RHEL系统一样，首先创建挂载文件夹，然后设置开机自动挂载最后再挂载即可，命令如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;mnt&#x2F;aptrom</span><br><span class="line">echo &quot;&#x2F;dev&#x2F;cdrom &#x2F;mnt&#x2F;aptrom iso9660 defaults 0 0&quot; &gt;&gt; &#x2F;etc&#x2F;fstab</span><br><span class="line">mount -a</span><br></pre></td></tr></table></figure><h3 id="添加本地源"><a href="#添加本地源" class="headerlink" title="添加本地源"></a>添加本地源</h3><p>命令如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-cdrom add &#x2F;mnt&#x2F;aptrom</span><br></pre></td></tr></table></figure><div class="note success modern"><p>总结完毕<del>~</del></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> debian </tag>
+            
+            <tag> 高职技能大赛 </tag>
+            
+            <tag> 网络系统管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2021新年快乐！！</title>
       <link href="28218.html"/>
       <url>28218.html</url>
