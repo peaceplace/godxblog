@@ -408,9 +408,9 @@
     
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
     
-    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
-    
     <category term="kali linux" scheme="https://peacecity.cn/tags/kali-linux/"/>
+    
+    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
@@ -512,9 +512,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
-    
     <category term="Hexo" scheme="https://peacecity.cn/tags/Hexo/"/>
+    
+    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
     
     <category term="备份" scheme="https://peacecity.cn/tags/%E5%A4%87%E4%BB%BD/"/>
     
@@ -541,9 +541,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
-    
     <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
+    
+    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
     
     <category term="图床" scheme="https://peacecity.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
     
@@ -574,11 +574,11 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
+    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
     
     <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
     
-    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
+    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
     
   </entry>
   
