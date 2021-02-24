@@ -6,7 +6,7 @@
   <link href="https://peacecity.cn/atom.xml" rel="self"/>
   
   <link href="https://peacecity.cn/"/>
-  <updated>2021-02-02T06:14:16.730Z</updated>
+  <updated>2021-02-24T11:41:19.303Z</updated>
   <id>https://peacecity.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Debian10.X使用mdadm工具创建Raid5磁盘阵列</title>
+    <link href="https://peacecity.cn/32237.html"/>
+    <id>https://peacecity.cn/32237.html</id>
+    <published>2021-02-24T11:41:19.303Z</published>
+    <updated>2021-02-24T11:41:19.303Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="debian" scheme="https://peacecity.cn/tags/debian/"/>
+    
+    <category term="高职技能大赛" scheme="https://peacecity.cn/tags/%E9%AB%98%E8%81%8C%E6%8A%80%E8%83%BD%E5%A4%A7%E8%B5%9B/"/>
+    
+    <category term="网络系统管理" scheme="https://peacecity.cn/tags/%E7%BD%91%E7%BB%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Debian10.X使用本地ISO安装软件包</title>
@@ -550,35 +581,6 @@
     <category term="picgo" scheme="https://peacecity.cn/tags/picgo/"/>
     
     <category term="jsdelivr" scheme="https://peacecity.cn/tags/jsdelivr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git使用技巧——发布Clone仓库</title>
-    <link href="https://peacecity.cn/36680.html"/>
-    <id>https://peacecity.cn/36680.html</id>
-    <published>2020-08-10T11:50:44.000Z</published>
-    <updated>2020-08-10T11:50:44.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Git" scheme="https://peacecity.cn/tags/Git/"/>
-    
-    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
-    
-    <category term="技巧" scheme="https://peacecity.cn/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
