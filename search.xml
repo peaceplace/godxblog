@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Debian10.X使用NFS创建共享文件</title>
+      <link href="21977.html"/>
+      <url>21977.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="技术简介"><a href="#技术简介" class="headerlink" title="技术简介"></a>技术简介</h2><p>NFS（网络文件系统）服务可以将远程Linux系统上的文件共享资源挂载到本地主机的目录上，从而使得本地主机（Linux客户端）基于TCP/IP协议，像使用本地主机上的资源那样读写远程Linux系统上的共享文件</p><h2 id="实施方法"><a href="#实施方法" class="headerlink" title="实施方法"></a>实施方法</h2><blockquote><p>假设企业需求:</p><blockquote><p>• 共享/data/share目录；<br>  • 用于存储server01主机的web数据；<br>  • 仅允许service网段访问该共享。</p></blockquote></blockquote><h2 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h2><p>环境： server01 （debian 10.x） IP： 172.16.100.201<br>共享目录： /data/share<br>service网段： 172.16.100.128/25</p><h3 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;data&#x2F;share</span><br></pre></td></tr></table></figure><h3 id="安装nfs工具"><a href="#安装nfs工具" class="headerlink" title="安装nfs工具"></a>安装nfs工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y nfs*</span><br></pre></td></tr></table></figure><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>配置文件位置： /etc/exports</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&#x2F;data&#x2F;share   172.16.100.128&#x2F;25(rw,sync,root_squash)&quot; &gt;&gt; &#x2F;etc&#x2F;exports</span><br></pre></td></tr></table></figure><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20210228131546.png"></p><center><strong>用于配置NFS服务程序配置文件的参数</strong></center>  <table><thead><tr><th align="center">参数</th><th align="center">作用</th></tr></thead><tbody><tr><td align="center">ro</td><td align="center">只读</td></tr><tr><td align="center">rw</td><td align="center">读写</td></tr><tr><td align="center">root_squash</td><td align="center">当NFS客户端以root管理员访问时，映射为NFS服务器的匿名用户</td></tr><tr><td align="center">no_root_squash</td><td align="center">当NFS客户端以root管理员访问时，映射为NFS服务器的root管理员</td></tr><tr><td align="center">all_squash</td><td align="center">无论NFS客户端使用什么账户访问，均映射为NFS服务器的匿名用户</td></tr><tr><td align="center">sync</td><td align="center">同时将数据写入到内存与硬盘中，保证不丢失数据</td></tr><tr><td align="center">async</td><td align="center">优先将数据保存到内存，然后再写入硬盘；这样效率更高，但可能会丢失数据</td></tr></tbody></table><h3 id="重启服务"><a href="#重启服务" class="headerlink" title="重启服务"></a>重启服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart nfs-server</span><br></pre></td></tr></table></figure><h3 id="在service网段内的服务器进行测试"><a href="#在service网段内的服务器进行测试" class="headerlink" title="在service网段内的服务器进行测试"></a>在service网段内的服务器进行测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">showmount -e 172.16.100.201</span><br></pre></td></tr></table></figure><p><img src= "/img/loading.gif" data-lazy-src="https://cdn.peacecity.cn/img/20210228131548.png"></p><div class="note success modern"><p>总结完毕<del>~</del></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> debian </tag>
+            
+            <tag> 高职技能大赛 </tag>
+            
+            <tag> 网络系统管理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Debian10.X使用mdadm工具创建Raid5磁盘阵列</title>
       <link href="32237.html"/>
       <url>32237.html</url>
