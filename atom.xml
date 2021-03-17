@@ -6,7 +6,7 @@
   <link href="https://peacecity.cn/atom.xml" rel="self"/>
   
   <link href="https://peacecity.cn/"/>
-  <updated>2021-02-28T04:59:55.221Z</updated>
+  <updated>2021-03-16T07:39:56.010Z</updated>
   <id>https://peacecity.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Debian10.X简易配置DHCP</title>
+    <link href="https://peacecity.cn/8975.html"/>
+    <id>https://peacecity.cn/8975.html</id>
+    <published>2021-03-16T07:39:56.010Z</published>
+    <updated>2021-03-16T07:39:56.010Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="debian" scheme="https://peacecity.cn/tags/debian/"/>
+    
+    <category term="高职技能大赛" scheme="https://peacecity.cn/tags/%E9%AB%98%E8%81%8C%E6%8A%80%E8%83%BD%E5%A4%A7%E8%B5%9B/"/>
+    
+    <category term="网络系统管理" scheme="https://peacecity.cn/tags/%E7%BD%91%E7%BB%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Debian10.X使用NFS创建共享文件</title>
@@ -406,9 +437,9 @@
     <category term="路由交换技术" scheme="https://peacecity.cn/categories/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="思科模拟器" scheme="https://peacecity.cn/tags/%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
-    
     <category term="路由交换技术" scheme="https://peacecity.cn/tags/%E8%B7%AF%E7%94%B1%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="思科模拟器" scheme="https://peacecity.cn/tags/%E6%80%9D%E7%A7%91%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
     
     <category term="命令" scheme="https://peacecity.cn/tags/%E5%91%BD%E4%BB%A4/"/>
     
@@ -550,35 +581,6 @@
     <category term="C" scheme="https://peacecity.cn/tags/C/"/>
     
     <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客备份</title>
-    <link href="https://peacecity.cn/34169.html"/>
-    <id>https://peacecity.cn/34169.html</id>
-    <published>2020-08-24T06:15:47.000Z</published>
-    <updated>2020-08-24T06:15:47.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Github" scheme="https://peacecity.cn/tags/Github/"/>
-    
-    <category term="Hexo" scheme="https://peacecity.cn/tags/Hexo/"/>
-    
-    <category term="备份" scheme="https://peacecity.cn/tags/%E5%A4%87%E4%BB%BD/"/>
     
   </entry>
   
