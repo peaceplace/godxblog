@@ -6,7 +6,7 @@
   <link href="https://peacecity.cn/atom.xml" rel="self"/>
   
   <link href="https://peacecity.cn/"/>
-  <updated>2021-03-16T07:39:56.010Z</updated>
+  <updated>2021-04-10T02:21:33.600Z</updated>
   <id>https://peacecity.cn/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>openstack常用运维命令整合</title>
+    <link href="https://peacecity.cn/18251.html"/>
+    <id>https://peacecity.cn/18251.html</id>
+    <published>2021-04-10T02:21:33.600Z</published>
+    <updated>2021-04-10T02:21:33.600Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="笔记" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="openstack" scheme="https://peacecity.cn/tags/openstack/"/>
+    
+    <category term="kubernets" scheme="https://peacecity.cn/tags/kubernets/"/>
+    
+    <category term="云计算" scheme="https://peacecity.cn/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+    
+    <category term="docker" scheme="https://peacecity.cn/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Debian10.X简易配置DHCP</title>
@@ -211,9 +244,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
-    
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
     
     <category term="试题" scheme="https://peacecity.cn/tags/%E8%AF%95%E9%A2%98/"/>
     
@@ -267,9 +300,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
-    
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
     
     <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
@@ -298,9 +331,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
-    
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
     
     <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
@@ -329,9 +362,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
-    
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
     
     <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
@@ -360,9 +393,9 @@
     <category term="教程" scheme="https://peacecity.cn/categories/%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
-    
     <category term="linux" scheme="https://peacecity.cn/tags/linux/"/>
+    
+    <category term="redhat" scheme="https://peacecity.cn/tags/redhat/"/>
     
     <category term="教程" scheme="https://peacecity.cn/tags/%E6%95%99%E7%A8%8B/"/>
     
@@ -554,33 +587,6 @@
     <category term="DCN" scheme="https://peacecity.cn/tags/DCN/"/>
     
     <category term="神州数码" scheme="https://peacecity.cn/tags/%E7%A5%9E%E5%B7%9E%E6%95%B0%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言概述</title>
-    <link href="https://peacecity.cn/23316.html"/>
-    <id>https://peacecity.cn/23316.html</id>
-    <published>2020-08-31T07:20:47.000Z</published>
-    <updated>2020-08-31T07:20:47.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="C" scheme="https://peacecity.cn/categories/C/"/>
-    
-    
-    <category term="C" scheme="https://peacecity.cn/tags/C/"/>
-    
-    <category term="读书总结" scheme="https://peacecity.cn/tags/%E8%AF%BB%E4%B9%A6%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
