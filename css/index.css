@@ -2391,13 +2391,7 @@ blockquote footer cite:before {
   border-radius: 8px 0 0 8px;
 }
 #recent-posts > .recent-post-item .right_radius {
-  -webkit-box-ordinal-group: 2;
-  -moz-box-ordinal-group: 2;
-  -o-box-ordinal-group: 2;
-  -ms-flex-order: 2;
-  -webkit-order: 2;
-  order: 2;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px 0 0 8px;
 }
 #recent-posts > .recent-post-item.ads-wrap {
   display: block !important;
@@ -4703,12 +4697,6 @@ _:future,
   background: url("https://cdn.jsdelivr.net/gh/peaceplace/CDN/img/20200809231048.gif") 100% 100% no-repeat;
 }
 #vcomment textarea:focus {
-  background-image: none;
-}
-#waline-wrap textarea {
-  background: url("/image/comment_bg.png") 100% 100% no-repeat;
-}
-#waline-wrap textarea:focus {
   background-image: none;
 }
 .fireworks {
