@@ -1557,7 +1557,7 @@ img:not([src]) {
   --hltools-color: rgba(238,255,255,0.8);
   --hlnumber-bg: #212121;
   --hlnumber-color: rgba(238,255,255,0.5);
-  --hlscrollbar-bg: #121212;
+  --hlscrollbar-bg: #353535;
   --hlexpand-bg: linear-gradient(180deg, rgba(33,33,33,0.6), rgba(33,33,33,0.9));
 }
 figure.highlight table::-webkit-scrollbar-thumb {
@@ -2323,7 +2323,7 @@ blockquote footer cite:before {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
 }
 .layout {
   display: -webkit-box;
@@ -3496,7 +3496,7 @@ blockquote footer cite:before {
   transition: all 0.5s;
 }
 #page-header.full_page {
-  min-height: 100%;
+  height: 100vh;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
@@ -3562,7 +3562,7 @@ blockquote footer cite:before {
   font-size: 30px;
 }
 #page-header.not-home-page {
-  min-height: 20rem;
+  height: 20rem;
 }
 @media screen and (max-width: 768px) {
   #page-header.not-home-page {
@@ -3581,7 +3581,7 @@ blockquote footer cite:before {
   }
 }
 #page-header.post-bg {
-  min-height: 20rem;
+  height: 20rem;
 }
 @media screen and (max-width: 768px) {
   #page-header.post-bg {
@@ -3619,7 +3619,7 @@ blockquote footer cite:before {
 }
 #page-header.not-top-img {
   margin-bottom: 0.5rem;
-  min-height: 60px;
+  height: 60px;
   background: 0;
 }
 #page-header.not-top-img #nav {
